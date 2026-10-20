@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotel San Carlos | Hotel en el centro de Reynosa desde 1951 (propuesta)</title>
+<meta name="description" content="Hotel en el centro de Reynosa, frente a la Plaza Principal y a 5 minutos del puente a Hidalgo, Texas. Habitaciones desde $920 por noche, salones para eventos y restaurante El Aljibe.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Manrope:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Idea: la fachada naranja del hotel al atardecer y una barra de reserva que calcula el total al instante */
+:root{
+  --night:#1C2038;      /* azul noche de su sitio actual */
+  --night-2:#262B49;
+  --terra:#B04A22;      /* naranja de la fachada, oscurecido para texto */
+  --terra-hi:#D96A35;
+  --gold:#D9A441;
+  --white:#FFFFFF;
+  --sand:#F6F3EF;
+  --ink:#1E1D22;
+  --muted:#5B5862;
+  --line:#E3DED8;
+  --r:10px;
+  --display:"Cormorant Garamond",Georgia,serif;
+  --body:"Mulish",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}
+img{max-width:100%;display:block}
+a{color:var(--terra)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance;color:var(--ink);font-weight:700}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:16px;padding-right:16px}
+
+.proposal{background:#0F1122;color:#fff;font-size:14px}
+.proposal .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.proposal button{background:var(--gold);color:var(--ink);border:0;border-radius:6px;padding:6px 12px;font:inherit;font-weight:700;cursor:pointer}
+
+header.top{position:sticky;top:0;z-index:20;background:var(--night);color:#fff}
+.top .wrap{display:flex;align-items:center;gap:18px;min-height:72px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;flex:none}
+.brand img{width:56px;height:auto;background:#fff;border-radius:6px;padding:3px}
+.brand b{font-family:var(--display);font-size:26px;line-height:1;display:block}
+.brand small{font-size:13px;color:#C9CBDA}
+nav.main{display:flex;gap:2px;margin-left:auto}
+nav.main a{text-decoration:none;color:#E6E7F0;font-weight:600;font-size:15px;padding:8px 10px;border-radius:6px}
+nav.main a:hover{background:var(--night-2);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 20px;border-radius:999px;font:inherit;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;line-height:1.2;text-align:center}
+.btn-terra{background:var(--terra);color:#fff}
+.btn-terra:hover{background:#923B19}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold:hover{background:#C99331}
+.btn-line{border-color:var(--terra);color:var(--terra);background:var(--white)}
+.btn-line:hover{background:var(--terra);color:#fff}
+.wa-top{flex:none}
+
+/* Portada */
+.hero{position:relative;color:#fff;background:var(--night) url("assets/HOTEL%20ATARDECER.jpg") center 35%/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,17,34,.78) 0%,rgba(15,17,34,.45) 55%,rgba(15,17,34,0) 100%),linear-gradient(180deg,rgba(15,17,34,.2) 0%,rgba(15,17,34,.5) 45%,rgba(15,17,34,.92) 100%)}
+.hero .wrap{position:relative;padding-top:110px;padding-bottom:40px;display:grid;gap:18px}
+.since{justify-self:start;font-weight:700;font-size:14px;letter-spacing:.08em;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 14px}
+.hero h1{color:#fff;font-size:clamp(46px,7vw,92px);max-width:12ch}
+.hero p.lead{color:#ECE6E0;font-size:19px;max-width:32em}
+
+/* Barra de reserva */
+.book{position:relative;margin-top:18px;background:var(--white);color:var(--ink);border-radius:var(--r);padding:16px;display:grid;grid-template-columns:1fr 1fr 1.3fr auto;gap:12px;align-items:end;box-shadow:0 18px 40px rgba(0,0,0,.3)}
+.book label{display:block;font-size:13px;font-weight:700;margin-bottom:4px;color:var(--muted)}
+.book input,.book select{width:100%;min-height:46px;font:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--white);color:var(--ink)}
+.book .sum{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:12px;font-size:16px}
+.book .sum b{font-family:var(--display);font-size:30px;color:var(--terra)}
+.book .sum .acts{display:flex;gap:8px;flex-wrap:wrap}
+
+section.block{padding:76px 0}
+section.alt{background:var(--sand)}
+.sec-head{display:grid;gap:10px;margin-bottom:30px;max-width:720px}
+.sec-head h2{font-size:clamp(38px,5vw,58px)}
+.sec-head p{color:var(--muted);font-size:18px}
+
+/* Habitaciones */
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.room{background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.room img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.room .in{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.room .top-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.room h3{font-size:28px}
+.room .price{font-weight:700;white-space:nowrap;color:var(--terra);font-size:20px;font-variant-numeric:tabular-nums}
+.room .price small{font-weight:500;color:var(--muted);font-size:13px}
+.room ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.room li{font-size:14px;background:var(--sand);border-radius:999px;padding:3px 10px}
+.room p{color:var(--muted);font-size:16px}
+.room button{margin-top:auto;align-self:flex-start}
+.incl{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 22px;color:var(--muted);font-size:16px}
+.incl b{color:var(--ink)}
+
+/* Eventos */
+.events{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ev{position:relative;border-radius:var(--r);overflow:hidden;min-height:300px;display:flex;align-items:flex-end;color:#fff;background:var(--night)}
+.ev img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ev::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,17,34,0) 30%,rgba(15,17,34,.92) 100%)}
+.ev .in{position:relative;z-index:1;padding:20px;display:grid;gap:2px}
+.ev h3{color:#fff;font-size:30px}
+.ev span{color:#ECE6E0;font-weight:600}
+.ev-cta{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap}
+
+/* Aljibe y ubicación */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.split img.photo{width:100%;border-radius:var(--r);aspect-ratio:16/10;object-fit:cover}
+.split .text{display:grid;gap:16px}
+.split .text p{color:var(--muted)}
+.aljibe-card{background:var(--night);border-radius:var(--r);aspect-ratio:16/10;display:grid;place-items:center}
+.aljibe-card img{width:min(240px,60%);height:auto;filter:invert(1) brightness(1.4)}
+.near{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.near li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.near span{color:var(--muted);text-align:right}
+
+/* Contacto */
+.contact{background:var(--night);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.contact h2{color:#fff;font-size:40px;grid-column:1/-1}
+.contact dl{margin:0;display:grid;gap:6px}
+.contact dt{color:#C9CBDA;font-size:14px}
+.contact dd{margin:0;font-size:20px;font-weight:700}
+.contact a{color:#fff}
+
+footer{background:#0F1122;color:#B9BCCD;padding:28px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:#fff}
+footer ul{list-style:none;margin:0;padding:0;display:flex;gap:16px;flex-wrap:wrap}
+
+dialog{border:0;padding:0;border-radius:var(--r);width:min(580px,calc(100vw - 32px));max-height:calc(100vh - 32px);color:var(--ink)}
+dialog::backdrop{background:rgba(15,17,34,.65)}
+.dh{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--white)}
+.dh h2{font-size:30px}
+.x{background:none;border:0;font-size:28px;line-height:1;cursor:pointer;width:44px;height:44px;color:var(--ink)}
+.db{padding:16px 20px 22px}
+.db ol{margin:0;padding-left:20px;display:grid;gap:12px}
+.db b{display:block}
+.db span{color:var(--muted);font-size:15px}
+
+@media (max-width:1000px){
+  nav.main{display:none}
+  .wa-top{margin-left:auto}
+  .rooms{grid-template-columns:1fr 1fr}
+  .book{grid-template-columns:1fr 1fr}
+  .book .pick{grid-column:1/-1}
+  .book > .btn{grid-column:1/-1}
+}
+@media (max-width:760px){
+  .hero .wrap{padding-top:64px}
+  .events,.split,.contact .wrap{grid-template-columns:1fr}
+  .ev{min-height:240px}
+  section.block{padding:56px 0}
+}
+@media (max-width:540px){
+  .rooms{grid-template-columns:1fr}
+  .brand small{display:none}
+  .brand img{width:46px}
+  .brand b{font-size:22px}
+  .wa-top span{display:none}
+  .wa-top{padding:10px 12px}
+  .book{grid-template-columns:1fr}
+}
+</style>
+<style id="refero-theme">
+/* fonts: family=Cormorant+Garamond:wght@300;400&family=Manrope:wght@500;600 */
+/* Estilo Refero: Amrit Palace, "spiced parchment gallery". Lienzo de pergamino cálido, titulares serif en peso 300 y mayúsculas, sans de peso 500, esquinas rectas, reglas de 1px en vez de sombras, y un solo acento (el naranja de la fachada) usado pocas veces. */
+:root{
+  --night:#2C2C2C; --night-2:#3A3631; --terra:#9C4A22; --terra-hi:#C0632F; --gold:#C0632F;
+  --white:#E8DECF; --sand:#D8CBB8; --ink:#2C2C2C; --muted:#4F4A43; --line:#B6AB9C; --r:0px;
+  --display:"Cormorant Garamond",Georgia,serif; --body:"Manrope",system-ui,sans-serif;
+}
+body{background:#D8CBB8;font-weight:500;font-size:15px}
+h1,h2,h3{font-weight:300!important;text-transform:uppercase;letter-spacing:-.03em;line-height:.98}
+.sec-head h2{font-size:clamp(40px,6vw,76px)}
+header.top{background:#2C2C2C}
+.btn{border-radius:3px;text-transform:uppercase;letter-spacing:.08em;font-size:13px;font-weight:600}
+.btn-terra{background:var(--terra)}
+.btn-gold{background:#E8DECF;color:#2C2C2C}
+.btn-gold:hover{background:#fff}
+.btn-line{border-color:#2C2C2C;color:#2C2C2C;background:transparent}
+.btn-line:hover{background:#2C2C2C;color:#E8DECF}
+.hero h1{font-size:clamp(52px,8vw,112px)!important}
+.since{border-radius:3px;background:transparent;border-color:rgba(255,255,255,.6)}
+.book{border-radius:0;background:#E8DECF;box-shadow:none;border:1px solid var(--line)}
+.book input,.book select{border-radius:3px;background:#F3ECE1;border-color:var(--line)}
+.book .sum{border-top-color:var(--line)}
+.book .sum b{color:var(--terra);font-family:var(--display);font-weight:400}
+section.block{border-top:1px solid var(--line)}
+section.alt{background:#CFC1AC}
+.room{border-radius:0;background:#E8DECF;border-color:var(--line)}
+.room img{border-radius:0}
+.room h3{font-size:30px}
+.room .price{color:var(--terra)}
+.room li{border-radius:3px;background:#D8CBB8}
+.ev{border-radius:0}
+.aljibe-card{border-radius:0;background:#2C2C2C}
+.split img.photo{border-radius:0}
+.near li{border-bottom-color:var(--line)}
+.contact{background:#2C2C2C}
+.contact h2{color:#E8DECF}
+footer{background:#1F1D1A}
+dialog{border-radius:0;background:#E8DECF}
+.dh{background:#E8DECF}
+a{color:#7A3A1A}
+.proposal button{background:#E8DECF;color:#2C2C2C}
+</style>
+</head>
+<body>
+
+<div class="proposal" role="note">
+  <div class="wrap">
+    <span>Vista previa de rediseño propuesta para el Hotel San Carlos de Reynosa. No es el sitio oficial.</span>
+    <button type="button" id="openChanges">Ver qué mejoramos</button>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio">
+      <img src="assets/logo.png" alt="" width="56" height="46">
+      <span><b>Hotel San Carlos</b><small>Su casa en Reynosa</small></span>
+    </a>
+    <nav class="main" aria-label="Principal">
+      <a href="#habitaciones">Habitaciones</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#aljibe">El Aljibe</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
+    <a class="btn btn-gold wa-top" href="https://wa.me/528995075420?text=Hola%2C%20quiero%20reservar%20en%20el%20Hotel%20San%20Carlos" target="_blank" rel="noopener" aria-label="Reservar por WhatsApp">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.4-.9-2.8-1.2-4.6-4.1-4.7-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.7-.1 1.4z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <div class="wrap">
+    <span class="since">DESDE 1951</span>
+    <h1>Su casa en el centro de Reynosa</h1>
+    <p class="lead">Tres generaciones de hospitalidad frente a la Plaza Principal, a 5 minutos del puente a Hidalgo, Texas. Déjese consentir.</p>
+    <form class="book" id="book" aria-label="Reservar habitación">
+      <div><label for="dIn">Llegada</label><input id="dIn" type="date" required></div>
+      <div><label for="dOut">Salida</label><input id="dOut" type="date" required></div>
+      <div class="pick"><label for="room">Habitación</label><select id="room"></select></div>
+      <button class="btn btn-terra" type="submit">Reservar</button>
+      <div class="sum" aria-live="polite">
+        <span id="sumText">Elige tus fechas para ver el total.</span>
+        <b id="sumTotal"></b>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="block" id="habitaciones">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Habitaciones</h2>
+      <p>Confort y elegancia para toda ocasión. Precio por noche en pesos mexicanos.</p>
+    </div>
+    <div class="rooms" id="rooms"></div>
+    <p class="incl"><b>Todas incluyen:</b><span>WiFi</span><span>Aire acondicionado individual</span><span>TV por cable</span><span>Servicio al cuarto</span><span>Teléfono con llamadas locales</span><span>Estacionamiento 24 h</span></p>
+  </div>
+</section>
+
+<section class="block alt" id="eventos">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Espacios para eventos</h2>
+      <p>El lugar ideal para sus celebraciones, en pleno centro de Reynosa.</p>
+    </div>
+    <div class="events">
+      <article class="ev"><img src="assets/terracota.jpg" alt="Salón Terracota montado para banquete" loading="lazy"><div class="in"><h3>Salón Terracota</h3><span>Hasta 150 personas</span></div></article>
+      <article class="ev"><div class="in"><h3>Salón Minerva</h3><span>Hasta 80 personas</span></div></article>
+      <article class="ev"><img src="assets/BAR.jpg" alt="Bar subterráneo con arcos de piedra" loading="lazy"><div class="in"><h3>Bar Subterráneo</h3><span>Hasta 50 personas</span></div></article>
+    </div>
+    <div class="ev-cta">
+      <a class="btn btn-terra" href="https://wa.me/528995075420?text=Hola%2C%20quiero%20cotizar%20un%20evento" target="_blank" rel="noopener">Cotizar un evento</a>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="aljibe">
+  <div class="wrap split">
+    <div class="aljibe-card"><img src="assets/logoaljibeoriginal-1.png" alt="El Aljibe, restaurante bar" loading="lazy"></div>
+    <div class="text">
+      <div class="sec-head" style="margin-bottom:0"><h2>Restaurante El Aljibe</h2></div>
+      <p>El restaurante bar del hotel. Los huéspedes cuentan con desayuno buffet y servicio al cuarto.</p>
+      <div><a class="btn btn-line" href="http://aljiberestaurantbar.com/" target="_blank" rel="noopener">Ver El Aljibe</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="ubicacion">
+  <div class="wrap split">
+    <div class="text">
+      <div class="sec-head" style="margin-bottom:0">
+        <h2>En el corazón de Reynosa</h2>
+        <p>Calle Hidalgo 970 Norte, Centro. A pasos de oficinas de gobierno, la calle peatonal Hidalgo, consultorios, ópticas y farmacias.</p>
+      </div>
+      <ul class="near">
+        <li>Parroquia de Nuestra Señora de Guadalupe<span>Enfrente</span></li>
+        <li>Plaza Principal Miguel Hidalgo<span>Junto al hotel</span></li>
+        <li>Presidencia Municipal<span>A un costado</span></li>
+        <li>Mercado Zaragoza<span>Caminando</span></li>
+        <li>Puente Internacional Reynosa-Hidalgo<span>5 minutos en auto</span></li>
+      </ul>
+      <div><a class="btn btn-terra" href="https://www.google.com/maps/search/?api=1&query=Hotel+San+Carlos+Hidalgo+970+Norte+Reynosa" target="_blank" rel="noopener">Cómo llegar</a></div>
+    </div>
+    <img class="photo" src="assets/IMG_3853.jpg" alt="Vista aérea del centro de Reynosa con la parroquia y la plaza" loading="lazy">
+  </div>
+</section>
+
+<section class="contact" style="padding:56px 0">
+  <div class="wrap">
+    <h2>Llámenos</h2>
+    <dl><dt>WhatsApp y reservas</dt><dd><a href="https://wa.me/528995075420" target="_blank" rel="noopener">899 507 5420</a></dd></dl>
+    <dl><dt>Teléfono local</dt><dd><a href="tel:+528999221280">899 922 1280</a> / <a href="tel:+528999224000">922 4000</a></dd></dl>
+    <dl><dt>Desde Estados Unidos</dt><dd><a href="tel:+528999221280">011 52 899 922 1280</a></dd></dl>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Hotel San Carlos. Tradición y hospitalidad desde 1951.</span>
+    <ul>
+      <li><a href="https://www.facebook.com/profile.php?id=61572367629878" target="_blank" rel="noopener">Facebook</a></li>
+      <li><a href="https://www.instagram.com/hotelsancarlosreynosa/" target="_blank" rel="noopener">Instagram</a></li>
+      <li><a href="https://x.com/HotelSanCarloss" target="_blank" rel="noopener">X</a></li>
+    </ul>
+  </div>
+</footer>
+
+<dialog id="changes" aria-labelledby="cT">
+  <div class="dh"><h2 id="cT">Qué mejoramos</h2><button class="x" type="button" data-close aria-label="Cerrar">×</button></div>
+  <div class="db">
+    <ol>
+      <li><b>Sitio seguro (https)</b><span>El sitio actual no tiene https. La reserva pide nombre, teléfono y correo, y la página "Login" pide crear cuenta con contraseña: hoy esos datos viajan sin cifrar y el navegador marca el sitio como "No seguro".</span></li>
+      <li><b>Teléfono de Estados Unidos corregido</b><span>El sitio dice 011-51-899-922-1280. El 51 es la lada de Perú; la de México es 52. Un huésped que llama desde Texas no los encuentra.</span></li>
+      <li><b>Reserva con total al instante</b><span>Fechas y habitación en la portada; el total por noches se calcula ahí mismo y sigue al motor de reservas que ya tienen.</span></li>
+      <li><b>Sin "Login" en el menú</b><span>El menú público muestra un acceso de inicio de sesión que el huésped no necesita para reservar.</span></li>
+      <li><b>Descripciones corregidas</b><span>La habitación Doble dice "2 camas matrimoniales" y después "dos camas individuales". También se quitaron las estrellas por habitación, que no eran consistentes (la Triple tenía 3).</span></li>
+      <li><b>Íconos propios</b><span>Los íconos de redes se cargan desde Flaticon, que pide dar crédito al autor.</span></li>
+      <li><b>Teléfono de Estados Unidos marcable</b><span>Todos los números se marcan con un toque, también el internacional.</span></li>
+    </ol>
+  </div>
+</dialog>
+
+<script>
+const IMG = "assets/";
+const BOOK = "http://www.sancarlosdereynosa.com/Reservas/reserva.html?habitacion=";
+// [nombre, precio por noche, foto, camas, nota, clave de su motor de reservas]
+const ROOMS = [
+  ["Habitación Sencilla", 920, "habitacion-sencilla-1.jpg", ["1 cama matrimonial","Baño privado"], "Para viajeros solos o parejas.", "Habitación Sencilla"],
+  ["King Size", 1200, "king-size-1.jpg", ["1 cama King Size","Baño privado"], "El máximo descanso en un espacio elegante.", "King Size"],
+  ["Habitación Doble", 1320, "habitacion-doble-1.jpg", ["2 camas matrimoniales","Baño privado"], "Ideal para colegas, amigos o familia.", "Habitacion Doble"],
+  ["Habitación Triple", 1620, "habitacion-triple-1.jpg", ["3 camas individuales","Baño privado"], "Para grupos pequeños.", "Habitación Triple"],
+  ["Junior Suite", 1680, "junior-suite-1.jpg", ["1 cama King Size","Baño de lujo","Despertador"], "Internet de alta velocidad y amenidades premium.", "Suites"],
+  ["Suite Presidencial", 2300, "suite-presidencial-1.jpg", ["1 cama King Size","Baño de lujo","Servicio de comida"], "La más amplia, con servicio de comida incluido.", "Suite presidencial"]
+];
+const money = n => "$" + n.toLocaleString("es-MX") + " MXN";
+
+document.getElementById("rooms").innerHTML = ROOMS.map(([n, p, img, beds, note], i) => `
+  <article class="room">
+    <img src="${IMG + img}" alt="${n} del Hotel San Carlos" loading="lazy" width="640" height="400">
+    <div class="in">
+      <div class="top-row"><h3>${n}</h3><span class="price">$${p.toLocaleString("es-MX")} <small>/ noche</small></span></div>
+      <ul>${beds.map(b => `<li>${b}</li>`).join("")}</ul>
+      <p>${note}</p>
+      <button class="btn btn-line" type="button" data-room="${i}">Elegir esta habitación</button>
+    </div>
+  </article>`).join("");
+
+const sel = document.getElementById("room"), dIn = document.getElementById("dIn"), dOut = document.getElementById("dOut");
+sel.innerHTML = ROOMS.map(([n, p], i) => `<option value="${i}">${n}, ${money(p)} por noche</option>`).join("");
+const iso = d => d.toISOString().slice(0, 10);
+const today = new Date(); const tomorrow = new Date(Date.now() + 864e5);
+dIn.min = iso(today); dIn.value = iso(today); dOut.value = iso(tomorrow); dOut.min = iso(tomorrow);
+
+function nights(){ return Math.round((new Date(dOut.value) - new Date(dIn.value)) / 864e5); }
+function update(){
+  const r = ROOMS[+sel.value], n = nights();
+  const text = document.getElementById("sumText"), total = document.getElementById("sumTotal");
+  if (!dIn.value || !dOut.value || n < 1) { text.textContent = "La salida debe ser después de la llegada."; total.textContent = ""; return; }
+  text.textContent = `${r[0]}, ${n} ${n === 1 ? "noche" : "noches"}`;
+  total.textContent = money(r[1] * n);
+}
+dIn.addEventListener("change", () => {
+  const next = new Date(new Date(dIn.value).getTime() + 864e5); dOut.min = iso(next);
+  if (nights() < 1) dOut.value = iso(next);
+  update();
+});
+[dOut, sel].forEach(el => el.addEventListener("change", update));
+update();
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-room]"); if (!b) return;
+  sel.value = b.dataset.room; update();
+  document.getElementById("inicio").scrollIntoView();
+  setTimeout(() => dIn.focus({preventScroll:true}), 400);
+});
+document.getElementById("book").addEventListener("submit", e => {
+  e.preventDefault();
+  if (nights() < 1) return;
+  // sigue al motor de reservas que el hotel ya tiene
+  window.open(BOOK + encodeURIComponent(ROOMS[+sel.value][5]), "_blank", "noopener");
+});
+
+const dlg = document.getElementById("changes");
+document.getElementById("openChanges").addEventListener("click", () => dlg.showModal());
+document.querySelector("[data-close]").addEventListener("click", () => dlg.close());
+dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
+</script>
+</body>
+</html>
